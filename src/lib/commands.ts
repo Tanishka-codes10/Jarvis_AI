@@ -62,7 +62,7 @@ export function processCommand(raw: string, now: Date = new Date()): CommandResu
 
   const search = t.match(/\b(?:search for|search|google)\s+(.+)/);
   if (search) {
-    const q = search[1].trim();
+    const q = (search[1] ?? "").trim();
     return {
       reply: `Searching Google for ${q}.`,
       understood: true,
@@ -71,7 +71,7 @@ export function processCommand(raw: string, now: Date = new Date()): CommandResu
   }
 
   if (/\b(explain|tell me about|what is|help)\b/.test(t)) {
-    for (const key of Object.keys(KNOWLEDGE)) if (t.includes(key)) return { reply: KNOWLEDGE[key], understood: true };
+    for (const key of Object.keys(KNOWLEDGE)) if (t.includes(key)) return { reply: KNOWLEDGE[key] ?? "", understood: true };
   }
   if (/\b(hello|hi|hey)\b/.test(t))
     return { reply: "Hello. JARVIS at your service. How can I help?", understood: true };
