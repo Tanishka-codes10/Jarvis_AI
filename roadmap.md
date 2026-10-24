@@ -1,0 +1,2 @@
+- [x] JARVIS web interface (voice, chat, dashboard, focus mode)
+- [x] Python version of the command engine (Flask backend) delivered as a file
