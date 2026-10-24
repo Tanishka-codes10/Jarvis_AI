@@ -392,7 +392,7 @@ function Bubble({ m, onRetry }: { m: ChatMessage; onRetry: () => void }) {
   );
 }
 
-function StatCard({ label, value, sub, tone }: { label: string; value: string; sub?: string; tone?: "ok" | "bad" }) {
+function StatCard({ label, value, sub, tone }: { label: string; value: string; sub?: string; tone?: "ok" | "bad" | undefined }) {
   return (
     <div className="hud-panel px-3 py-2 last:col-span-2 md:last:col-span-1">
       <div className="font-display text-[10px] tracking-[0.2em] text-muted-foreground">{label.toUpperCase()}</div>
